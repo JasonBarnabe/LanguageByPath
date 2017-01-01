@@ -3,12 +3,13 @@
 $PluginInfo['LanguageByPath'] = array(
   'Name' => 'Language By Path',
   'Description' => "Loads a language based on the path.",
-  'Version' => '1.0',
+  'Version' => '1.1',
   'RequiredApplications' => array('Vanilla' => '2.1'),
   'MobileFriendly' => TRUE,
   'Author' => "Jason Barnabe",
   'AuthorEmail' => 'jason.barnabe@gmail.com',
-  'AuthorUrl' => 'https://github.com/JasonBarnabe/'
+  'AuthorUrl' => 'https://github.com/JasonBarnabe/',
+  'License' => 'GNU GPL2'
 );
 
 require_once dirname(__FILE__).'/config.php';
