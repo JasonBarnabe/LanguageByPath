@@ -1,17 +1,5 @@
 <?php if (!defined('APPLICATION')) exit();
 
-$PluginInfo['LanguageByPath'] = array(
-  'Name' => 'Language By Path',
-  'Description' => "Loads a language based on the path.",
-  'Version' => '1.1',
-  'RequiredApplications' => array('Vanilla' => '2.1'),
-  'MobileFriendly' => TRUE,
-  'Author' => "Jason Barnabe",
-  'AuthorEmail' => 'jason.barnabe@gmail.com',
-  'AuthorUrl' => 'https://github.com/JasonBarnabe/',
-  'License' => 'GNU GPL2'
-);
-
 require_once dirname(__FILE__).'/config.php';
 
 class LanguageByPathPlugin extends Gdn_Plugin {
@@ -26,7 +14,7 @@ class LanguageByPathPlugin extends Gdn_Plugin {
   public function Gdn_Dispatcher_AfterAnalyzeRequest_Handler($Sender) {
     $Locale = $this->ValidateLocale(GetValue('locale', $_GET, FALSE));
     if ($Locale) {
-      Gdn::Locale()->Set($Locale, Gdn::ApplicationManager()->EnabledApplicationFolders(), Gdn::PluginManager()->EnabledPluginFolders());
+      Gdn::Locale()->set($Locale);
     }
   }
 
